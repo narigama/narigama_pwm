@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "narigama-pwm"
+version = "0.1.0"
+description = ""
+authors = ["David Smith <david@narigama.dev>"]
+readme = "README.md"
+packages = [{include = "narigama_pwm"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.argon2.dependencies]
+argon2-cffi = {version = "*"}
+
+[tool.poetry.group.dev.dependencies]
+ruff = "*"
+black = "*"
+ipython = "*"
+pytest = "*"
+pytest-bdd = "*"
+pytest-random-order = "*"
+pre-commit = "*"
+
+[tool.pytest.ini_options]
+addopts = "--random-order"
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 120
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
